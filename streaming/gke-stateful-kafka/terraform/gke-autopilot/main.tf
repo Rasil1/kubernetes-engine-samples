@@ -48,8 +48,8 @@ module "gke_kafka_central" {
   zones                           = ["asia-east2-a", "asia-east2-b", "asia-east2-c"]
   network                         = module.network.network_name
   subnetwork                      = module.network.primary_subnet_name
-  ip_range_pods                   = "ip-range-pods-asia-east2"
-  ip_range_services               = "ip-range-svc-asia-east2"
+  ip_range_pods                   = "test-ip-range-pods-asia-east2"
+  ip_range_services               = "test-ip-range-svc-asia-east2"
   horizontal_pod_autoscaling      = true
   release_channel                 = "REGULAR"
   enable_vertical_pod_autoscaling = true
@@ -64,15 +64,15 @@ module "gke_kafka_central" {
 module "gke_kafka_west" {
   source                          = "../modules/beta-autopilot-private-cluster"
   project_id                      = var.project_id
-  name                            = "test-gke-kafka-asia-east1"
+  name                            = "test-gke-kafka-asia-northeast1"
   kubernetes_version              = "1.25"
-  region                          = "asia-east1"
+  region                          = "asia-northeast1"
   regional                        = true
-  zones                           = ["asia-east1-a", "asia-east1-b", "asia-east1-c"]
+  zones                           = ["asia-northeast1-a", "asia-northeast1-b", "asia-northeast1-c"]
   network                         = module.network.network_name
   subnetwork                      = module.network.secondary_subnet_name
-  ip_range_pods                   = "ip-range-pods-asia-east1"
-  ip_range_services               = "ip-range-svc-asia-east1"
+  ip_range_pods                   = "test-ip-range-pods-asia-northeast1"
+  ip_range_services               = "test-ip-range-svc-asia-northeast1"
   horizontal_pod_autoscaling      = true
   release_channel                 = "REGULAR"
   enable_vertical_pod_autoscaling = true
