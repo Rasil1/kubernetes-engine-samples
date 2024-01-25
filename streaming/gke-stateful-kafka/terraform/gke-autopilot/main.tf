@@ -16,7 +16,7 @@
 data "google_client_config" "default" {}
 // [START artifactregistry_create_docker_repo]
 resource "google_artifact_registry_repository" "main" {
-  location      = "us"
+  location      = "asia"
   repository_id = "test"
   format        = "DOCKER"
   project       = var.project_id
