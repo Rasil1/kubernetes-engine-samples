@@ -41,15 +41,15 @@ module "network" {
 module "gke_kafka_central" {
   source                          = "../modules/beta-autopilot-private-cluster"
   project_id                      = var.project_id
-  name                            = "gke-kafka-us-central1"
+  name                            = "test-kafka-asia-east2"
   kubernetes_version              = "1.25"
-  region                          = "us-central1"
+  region                          = "asia-east2"
   regional                        = true
-  zones                           = ["us-central1-a", "us-central1-b", "us-central1-c"]
+  zones                           = ["asia-east2-a", "asia-east2-b", "asia-east2-c"]
   network                         = module.network.network_name
   subnetwork                      = module.network.primary_subnet_name
-  ip_range_pods                   = "ip-range-pods-us-central1"
-  ip_range_services               = "ip-range-svc-us-central1"
+  ip_range_pods                   = "ip-range-pods-asia-east2"
+  ip_range_services               = "ip-range-svc-asia-east2"
   horizontal_pod_autoscaling      = true
   release_channel                 = "REGULAR"
   enable_vertical_pod_autoscaling = true
@@ -64,15 +64,15 @@ module "gke_kafka_central" {
 module "gke_kafka_west" {
   source                          = "../modules/beta-autopilot-private-cluster"
   project_id                      = var.project_id
-  name                            = "gke-kafka-us-west1"
+  name                            = "test-gke-kafka-asia-east1"
   kubernetes_version              = "1.25"
-  region                          = "us-west1"
+  region                          = "asia-east1"
   regional                        = true
-  zones                           = ["us-west1-a", "us-west1-b", "us-west1-c"]
+  zones                           = ["asia-east1-a", "asia-east1-b", "asia-east1-c"]
   network                         = module.network.network_name
   subnetwork                      = module.network.secondary_subnet_name
-  ip_range_pods                   = "ip-range-pods-us-west1"
-  ip_range_services               = "ip-range-svc-us-west1"
+  ip_range_pods                   = "ip-range-pods-asia-east1"
+  ip_range_services               = "ip-range-svc-asia-east1"
   horizontal_pod_autoscaling      = true
   release_channel                 = "REGULAR"
   enable_vertical_pod_autoscaling = true
