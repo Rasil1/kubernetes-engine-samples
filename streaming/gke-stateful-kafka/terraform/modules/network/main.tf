@@ -18,7 +18,7 @@ module "gcp-network" {
   version = "< 8.0.0"
 
   project_id   = var.project_id
-  network_name = "vpc-gke-kafka"
+  network_name = "vpc-gke-kafka-test"
 
   subnets = [
     {
@@ -28,9 +28,9 @@ module "gcp-network" {
       subnet_private_access = true
     },
     {
-      subnet_name           = "snet-gke-kafka-asia-west1"
+      subnet_name           = "snet-gke-kafka-asia-northeast1"
       subnet_ip             = "10.10.128.0/17"
-      subnet_region         = "asia-west1"
+      subnet_region         = "asia-northeast1"
       subnet_private_access = true
     },
   ]
@@ -46,13 +46,13 @@ module "gcp-network" {
         ip_cidr_range = "192.168.64.0/18"
       },
     ],
-    ("snet-gke-kafka-asia-west1") = [
+    ("snet-gke-kafka-asia-northeast1") = [
       {
-        range_name    = "test-ip-range-pods-asia-west1"
+        range_name    = "test-ip-range-pods-asia-northeast1"
         ip_cidr_range = "192.168.128.0/18"
       },
       {
-        range_name    = "test-ip-range-svc-asia-west1"
+        range_name    = "test-ip-range-svc-asia-northeast1"
         ip_cidr_range = "192.168.192.0/18"
       },
     ]

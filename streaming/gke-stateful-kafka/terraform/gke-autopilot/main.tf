@@ -15,7 +15,7 @@
 # google_client_config and kubernetes provider must be explicitly specified like the following.
 data "google_client_config" "default" {}
 // [START artifactregistry_create_docker_repo]
-resource "google_artifact_registry_repository" "test" {
+resource "google_artifact_registry_repository" "main" {
   location      = "us"
   repository_id = "test"
   format        = "DOCKER"
