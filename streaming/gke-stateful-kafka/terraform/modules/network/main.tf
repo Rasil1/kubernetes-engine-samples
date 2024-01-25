@@ -36,7 +36,7 @@ module "gcp-network" {
   ]
 
   secondary_ranges = {
-    ("snet-gke-kafka-asia-east2") = [
+    ("test-snet-gke-kafka-asia-east2") = [
       {
         range_name    = "test-ip-range-pods-asia-east2"
         ip_cidr_range = "192.168.0.0/18"
@@ -46,7 +46,7 @@ module "gcp-network" {
         ip_cidr_range = "192.168.64.0/18"
       },
     ],
-    ("snet-gke-kafka-asia-northeast1") = [
+    ("test-snet-gke-kafka-asia-northeast1") = [
       {
         range_name    = "test-ip-range-pods-asia-northeast1"
         ip_cidr_range = "192.168.128.0/18"
