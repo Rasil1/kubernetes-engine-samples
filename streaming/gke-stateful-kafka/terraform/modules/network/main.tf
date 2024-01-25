@@ -22,13 +22,13 @@ module "gcp-network" {
 
   subnets = [
     {
-      subnet_name           = "snet-gke-kafka-asia-east2"
+      subnet_name           = "test-snet-gke-kafka-asia-east2"
       subnet_ip             = "10.10.0.0/17"
       subnet_region         = "asia-east2"
       subnet_private_access = true
     },
     {
-      subnet_name           = "snet-gke-kafka-asia-northeast1"
+      subnet_name           = "test-snet-gke-kafka-asia-northeast1"
       subnet_ip             = "10.10.128.0/17"
       subnet_region         = "asia-northeast1"
       subnet_private_access = true
